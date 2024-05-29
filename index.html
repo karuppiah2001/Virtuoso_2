@@ -51,7 +51,7 @@
     <h2>Login</h2>
     <form id="Login">
       <input type="username" id="user" placeholder="name" required>
-      <input type="password" id="passkey" placeholder="passkey" required>
+      <input type="passkey" id="passkey" placeholder="passkey" required>
       <button type="button" onclick="login()">Login</button>
     </form>
   </div>
@@ -60,7 +60,7 @@
     function login() {
       // Perform authentication logic here (dummy check for demonstration)
       var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
+      var password = document.getElementById('passkey').value;
 
       // Dummy check, replace with your actual authentication logic
       if (username === 'user' && password === 'login123') {
