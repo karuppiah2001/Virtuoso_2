@@ -46,12 +46,12 @@
     }
   </style>
 </head>
-<body>
+<body onload="createPasswordInput()">
   <div class="login-container">
     <h2>Login</h2>
     <form id="Login">
       <input type="username" id="user" placeholder="name" required>
-      <input type="password" id="password" placeholder="password" required>
+      <div id ="divPassword"></div>
       <button type="button" onclick="login()">Login</button>
     </form>
   </div>
@@ -70,6 +70,26 @@
         alert('Invalid credentials. Please try again.');
       }
     }
+
+    function createPasswordInput() {
+            // Generate a dynamic ID
+            const dynamicId = 'password_' + Math.floor(Math.random() * 1000);
+
+            // Create the input element
+            const inputElement = document.createElement('input');
+            inputElement.type = 'password';
+            inputElement.id = dynamicId;
+            inputElement.placeholder = 'password';
+            inputElement.required = true;
+
+            // Find the div with id 'divPassword'
+            const divPassword = document.getElementById('divPassword');
+
+            // Append the input element to the div
+            if (divPassword) {
+                divPassword.appendChild(inputElement);
+            }
+        }
   </script>
 </body>
 </html>
